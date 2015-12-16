@@ -6,12 +6,11 @@ function MainRouter($stateProvider, $urlRouterProvider){
       url: "/return",
       templateUrl: "index.html"
     });
-
   $stateProvider
     .state('user', {
       url: "/user",
       templateUrl: "user.html"
-    })
+    });
 
     $urlRouterProvider.otherwise("/");
 

@@ -61,7 +61,7 @@ router.get('/populate', function(req, res){
   });
   user.save(function(err){
     if(err) throw err;
-    console.log('user saved');
+    console.log('word saved');
     res.json({success: true});
   });
 

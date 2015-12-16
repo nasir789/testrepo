@@ -7,6 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/bankController.js"></script>
+    <script type="text/javascript" src="js/InputController.js"></script>
     <!-- <script type="text/javascript" src="./controller/wordsController.js"></script> -->
     <!-- <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"></link> -->
   </head>
@@ -15,17 +16,33 @@
       <h1>{{words.test}}</h1>
      <ul id="idks">
       <li ng-repeat="wordshow in words.all">
-       <p><strong>{{wordshow.name}}</strong></p>
+       <p id="checkWord"><strong>{{wordshow.name}}</strong></p>
      </li>
    </ul>
-
-<p><input type="text"></input></p>
-
-
  </section>
 
- <button>Start Game</button>
+ <div class="check">
+
+   <form ng-submit="onSubmit()"
+         name="theForm"
+         novalidate="novalidate">
+
+
+    </form>
+
+  <pre>{{ theForm | json }}</pre>
+
+ </div>
+
+
+ <button onclick="myFunction()">Try it</button>
+
+<div ng-controller='InputController as userController' ui-view>
+  <p><input id="demo" type="text" ng-model="userInput" ng-keyup="userController.isCorrect(userInput)"></input></p>
+
+ <button id="initiated">Start Game</button>
  <button>Login</button>
+ </div>
   <!-- <body ng-app='wordsGame'> -->
     <!-- <section ng-controller='BankController' ui-view>
     <ul id="names">
