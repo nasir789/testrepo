@@ -5,19 +5,27 @@ angular.module('wordsGame').controller('InputController', InputController);
   function InputController() {
 
     this.isCorrect = function(word) {
-      // var open = true;
-      // var value = 3;
-      // console.log(value == 3);
-      // console.log(open);
-      var check = "rotavator"
+      // // var element = Document.get the word the users trying to match
+      var check = document.getElementsByClassName("checkWord")[1].innerText;
+
       if ( word == check ) {
-        document.getElementById("checkWord").style.color = 'green';
+        $("#demo").text(function(){
+          (".checkWord").hide();
+        });
+        // document.getElementsByClassName("checkWord").style.color = 'green';
         console.log('meow')
       };
       if ( word !== check ) {
-        document.getElementById("checkWord").style.color = 'red';
+        // document.getElementsByClassName("checkWord").style.color = 'red';
         console.log('woof')
       };
+
+
+      // do {
+      //   $("#hide").click(function(){
+      //  $("p").hide();
+      // });
+      // } while ();
 
 
 
