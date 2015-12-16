@@ -57,7 +57,7 @@ mongoose.connect('mongodb://localhost/wordbank3', function(err) {
 
 router.get('/populate', function(req, res){
   var user = new wordModel({
-    name: 'rotavator'
+    name: 'perfidiousness'
   });
   user.save(function(err){
     if(err) throw err;
