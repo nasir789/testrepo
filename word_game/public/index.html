@@ -14,22 +14,26 @@
   </head>
     <body ng-app='wordsGame'>
     <section ng-controller='BankController as words' ui-view>
-      <h1>{{words.test}}</h1>
+      <h1>The Agglutinative Game</h1>
      <ul id="idks">
-      <li ng-repeat="wordshow in words.all">
+      <li ng-repeat="wordshow in words.all" ng-hide="wordshow.guessed">
        <p class="checkWord"><strong>{{wordshow.name}}</strong></p>
      </li>
    </ul>
+
+   <div ui-view>
+     <p><input id="demo" type="text" ng-model="userInput" ng-keyup="words.isCorrect(userInput)"></input></p>
+
+    <button id="initiated">Start Game</button>
+    <button>Login</button>
+    </div>
+
+
  </section>
 
  <button onclick="myFunction()">Try it</button>
 
-<div ng-controller='InputController as userController' ui-view>
-  <p><input id="demo" type="text" ng-model="userInput" ng-keyup="userController.isCorrect(userInput)"></input></p>
 
- <button id="initiated">Start Game</button>
- <button>Login</button>
- </div>
   <!-- <body ng-app='wordsGame'> -->
     <!-- <section ng-controller='BankController' ui-view>
     <ul id="names">
