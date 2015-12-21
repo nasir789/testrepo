@@ -1,4 +1,48 @@
+h1 {
+  font-size: 25px;
+  border: 2px red dashed;
+  text-align: center;
+  color: blue;
+}
+.checkWord {
+  color: blue;
+}
+
+#idks {
+  text-align: center;
+}
+
+.valueField {
+  text-align: center;
+}
 
 .checkWord {
   color: blue;
+}
+
+.userOptions {
+  text-align: center;
+}
+
+.wordDisplay {
+  color: black;
+  text-align: center;
+  text-shadow: 2px 1px 2px #40FFA6;
+  font-size: 40px;
+}
+
+.title {
+  font-size: 50px;
+  text-shadow: 1px 2px 2px #FF196E;
+}
+
+.overView {
+  text-align: center;
+}
+
+#demo1 {
+  height: 50px;
+  width: 500px;
+  font-size: 40px;
+  text-align: center;
 }

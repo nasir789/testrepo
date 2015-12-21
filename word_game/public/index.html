@@ -8,30 +8,43 @@
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/bankController.js"></script>
     <script type="text/javascript" src="js/InputController.js"></script>
+    <script type="text/javascript" src="js/timerController.js"></script>
     <link rel="stylesheet" href="frontend/style.css">
     <!-- <script type="text/javascript" src="./controller/wordsController.js"></script> -->
     <!-- <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"></link> -->
   </head>
     <body ng-app='wordsGame'>
     <section ng-controller='BankController as words' ui-view>
-      <h1>The Agglutinative Game</h1>
-     <ul id="idks">
+      <h1 class="title">A MEAN AGGLUTINATIVE GAME</h1>
+      <div class="overView">
+       <p class="desCrip">DIRECTIONS</p>
+       <p class="content">1.) You have 90 seconds to match all TEN Agglutinative words<br>
+                         2.) Game will begin as soon as you hit 'Start'
+       </p>
+       <p class="hint">P.S.- it gets more difficult as you progress!</p>
+      </div>
+      <div ui-view>
+        <!-- <p class="valueField"><input id="demo" type="text" ng-model="userInput" ng-keyup="words.isCorrect(userInput)"></input></p> -->
+        <p class="valueField"><input id="demo1" type="text" ng-model="userInputNew" ng-keyup="words.isCurrentCorrect(userInputNew)"></input></p>
+
+        <div class="userOptions">
+         <button onclick="myTimer()">Start Clock</button>
+        </div>
+       </div>
+       <div class="wordDisplay">
+         <span>{{words.currentWord}}</span>
+       </div>
+
+       <!-- <div><span id="time"></span></div> -->
+     <!-- <ul id="idks">
       <li ng-repeat="wordshow in words.all" ng-hide="wordshow.guessed">
        <p class="checkWord"><strong>{{wordshow.name}}</strong></p>
      </li>
-   </ul>
-
-   <div ui-view>
-     <p><input id="demo" type="text" ng-model="userInput" ng-keyup="words.isCorrect(userInput)"></input></p>
-
-    <button id="initiated">Start Game</button>
-    <button>Login</button>
-    </div>
+   </ul> -->
 
 
  </section>
 
- <button onclick="myFunction()">Try it</button>
 
 
   <!-- <body ng-app='wordsGame'> -->
@@ -43,8 +56,7 @@
     </ul> -->
   <!-- </section> -->
 
-  <p>yo</p>
-    <button>Click</button>
+
 
   </body>
 </html>
